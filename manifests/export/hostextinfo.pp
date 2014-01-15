@@ -10,6 +10,6 @@ class nagios-client::export::hostextinfo {
     icon_image      => "base/${::operatingsystem}.png",
     statusmap_image => "base/${::operatingsystem}.gd2",
     target          => "$defaults::resource_dir/hostextinfo/${::fqdn}.cfg",
-    require         => Export::file['hostextinfo'],
+    require         => Export::File['hostextinfo'],
   }
 }
