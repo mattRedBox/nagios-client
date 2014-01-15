@@ -36,7 +36,7 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class nagios-client {
-  class {'repo':}
-  ->
-  class {'server':}
+  class {'export::host':}
+  class {'export::hostextinfo':}
+  class {'export::ping':}
 }
