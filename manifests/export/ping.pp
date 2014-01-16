@@ -6,7 +6,7 @@ class nagios-client::export::ping {
     use       => 'check_ping',
     host_name => $::fqdn,
     target    => "$defaults::resource_dir/check_ping/${::fqdn}.cfg",
-    require   => Config_update[${::fqdn}, 'check_ping'],
+    require   => Config_update[$::fqdn, 'check_ping'],
   }
 
 }
