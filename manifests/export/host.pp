@@ -8,7 +8,7 @@ class nagios-client::export::host {
     address => $ipaddress,
     use     => 'linux-server',
     target  => "$defaults::resource_dir/host/${::fqdn}.cfg",
-    require => Config_update[$::fqdn, 'host'],
+    require => Nagios-server::Config_update[$::fqdn, 'host'],
   }
   
 }
