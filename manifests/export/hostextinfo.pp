@@ -2,8 +2,9 @@ class nagios-client::export::hostextinfo {
     
   include nagios-client::defaults
 
-  export::update_config{$::fqdn:
-    nagios_resource => 'hostextinfo',
+  export::update_config{"hostextinfo_${::fqdn}":
+    resource_specific => $::fqdn,
+    nagios_resource   => 'hostextinfo',
   }
 
   @@nagios_hostextinfo { $::fqdn:
