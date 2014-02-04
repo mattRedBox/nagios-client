@@ -19,9 +19,4 @@ define nagios-client::export::update_config($resource_specific=$title, $nagios_r
     group   => 'nagios',
     require => File["${resource_specific}_${resource_generic}"],
   }
-  
-  @@file_line { "${::fqdn}_${resource_generic}":
-    path    => "${defaults::config_dir}/nagios.cfg",
-    line    => "cfg_dir=${defaults::resource_dir}/${resource_generic}",
-  }
 }
