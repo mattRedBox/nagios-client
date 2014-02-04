@@ -12,7 +12,6 @@ class nagios-client::export::host {
     address => $ipaddress,
     use     => 'linux-server',
     target  => "$defaults::resource_dir/host/${::fqdn}.cfg",
-    owner   => 'nagios',
   }
   
 }
