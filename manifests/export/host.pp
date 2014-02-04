@@ -2,13 +2,11 @@ class nagios-client::export::host {
     
   include nagios-client::defaults
 
-  $nagios_resource = "nagios_host"
-
   export::update_config{$::fqdn,
     nagios_resource => 'host',
   }
 
-  @@${nagios_resource} { $::fqdn:
+  @@nagios_host { $::fqdn:
     ensure  => present,
     alias   => $hostname,
     address => $ipaddress,

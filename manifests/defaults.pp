@@ -8,5 +8,5 @@ class nagios-client::defaults {
         '/sbin']
 
   $config_dir = '/etc/nagios'
-  $resource_dir = "$config_dir/resource.d"
+  $resource_dir = "${config_dir}/resource.d"
 }
