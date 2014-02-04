@@ -6,6 +6,7 @@ class nagios-client::export::host {
 
   export::update_config{$specific_target::fqdn,
     nagios_resource => 'host',
+  }
 
   @@${nagios_resource} { $::fqdn:
     ensure  => present,
