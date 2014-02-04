@@ -12,7 +12,7 @@ define nagios-client::export::update_config($resource_specific=$title, $nagios_r
     group   => 'nagios',
   }
 
-  @@file { "${resource_generic}_${resource_specific}.cfg",
+  @@file { "${resource_generic}_${resource_specific}.cfg":
     path    => "${defaults::resource_dir}/${resource_generic}/${resource_specific}.cfg",
     ensure  => file,
     owner   => 'nagios',
