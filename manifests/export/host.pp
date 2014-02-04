@@ -4,7 +4,7 @@ class nagios-client::export::host {
 
   $nagios_resource = "nagios_host"
 
-  export::update_config{$specific_target::fqdn,
+  export::update_config{$::fqdn,
     nagios_resource => 'host',
   }
 
