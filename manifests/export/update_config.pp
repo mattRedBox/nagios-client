@@ -10,7 +10,7 @@ define nagios-client::export::update_config($resource_specific=$title, $nagios_r
     ensure  => directory,
     owner   => 'nagios',
     group   => 'nagios',
-    require => "nagios_${nagios_resource}[$resource_specific]",
+    require => "Nagios_${nagios_resource}[$resource_specific]",
   }
 
   @@file_line { "${::fqdn}_${resource_generic}":
