@@ -2,7 +2,7 @@ class nagios-client::export::host {
     
   include nagios-client::defaults
 
-  export::update_config{$::fqdn,
+  export::update_config{$::fqdn:
     nagios_resource => 'host',
   }
 
