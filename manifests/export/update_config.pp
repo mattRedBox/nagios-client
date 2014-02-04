@@ -3,7 +3,7 @@ define nagios-client::export::update_config($resource_specific=$title, $nagios_r
   ## resource_generic = host, hostextinfo, check_ping
   ## nagios_resource = host, hostextinfo, service
   
-  include nagios-client::export::defaults
+  include nagios-client::defaults
 
   @@file { "${::fqdn}_${resource_generic}":
     path    => "${defaults::resource_dir}/${resource_generic}",
